@@ -1,0 +1,15 @@
+<div class="calculator">
+  <p class="calculator__result">Résultat : {{ result() }}</p>
+
+  <div class="calculator__controls">
+    <input class="calculator__input" type="number" [(ngModel)]="inputNumber">
+    <button class="calculator__button" (click)="addInput()">Ajouter</button>
+    <button
+      class="calculator__button calculator__button--secondary"
+      [disabled]="!resetEnable()"
+      (click)="resetCalc()"
+    >
+      Reset
+    </button>
+  </div>
+</div>
