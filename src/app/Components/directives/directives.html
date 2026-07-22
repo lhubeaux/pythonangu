@@ -1,0 +1,12 @@
+<div class="card-list">
+  @for (t of tasks(); track t.title) {
+    <div class="card" [appPriorityColor]="t.priority">
+      <span>{{ t.title }} — {{ t.priority }}</span>
+      @if (t.priority === 'high') {
+        <strong> ! Urgent</strong>
+      }
+    </div>
+  } @empty {
+    <p>Aucune tâche à afficher.</p>
+  }
+</div>
