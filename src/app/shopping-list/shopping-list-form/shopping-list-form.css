@@ -1,0 +1,39 @@
+.shopping-list-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.shopping-list-form input {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #343a4d;
+  border-radius: 8px;
+  background: #262a38;
+  color: #e6e8ef;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.shopping-list-form input::placeholder {
+  color: #6b7288;
+}
+
+.shopping-list-form input:focus {
+  border-color: #6c8cff;
+}
+
+.shopping-list-form button {
+  padding: 0.6rem 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background: #6c8cff;
+  color: #12141c;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.shopping-list-form button:hover {
+  background: #5474e0;
+}

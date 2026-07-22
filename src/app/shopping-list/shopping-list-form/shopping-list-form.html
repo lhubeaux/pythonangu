@@ -1,0 +1,9 @@
+<div class="shopping-list-form">
+  <input
+    type="text"
+    [(ngModel)]="newItem"
+    (keyup.enter)="addItem()"
+    placeholder="Ajouter un article..."
+  />
+  <button (click)="addItem()">Ajouter</button>
+</div>

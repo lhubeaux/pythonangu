@@ -1,0 +1,8 @@
+<div class="shopping-list">
+  <h2>Ma liste de courses</h2>
+  <app-shopping-list-form (itemAdded)="addItem($event)"></app-shopping-list-form>
+  <app-shopping-list-items
+    [items]="items()"
+    (itemRemoved)="removeItem($event)">
+  </app-shopping-list-items>
+</div>

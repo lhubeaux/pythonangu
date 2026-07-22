@@ -1,0 +1,1 @@
+{"root":["./src/main.ts","./src/app/app.config.ts","./src/app/app.routes.ts","./src/app/app.ts","./src/app/components/chrono/chrono.ts","./src/app/components/directives/directives.ts","./src/app/components/pipes/duration-pipe.ts","./src/app/components/side-bar/side-bar.ts","./src/app/directives/exemple.ts","./src/app/directives/priority-color.ts"],"version":"6.0.3"}
