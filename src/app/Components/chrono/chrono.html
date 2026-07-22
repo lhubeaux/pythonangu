@@ -1,18 +1,9 @@
-<div class="chrono-container">
-    <div class="chrono-display">
-        @if (showHours()){
-            <span class ="unit">{{hours()}}</span><span class="separator">:</span>
-        }
-        @if(showMinutes()){
-            <span class ="unit">{{minutesDisplay()}}</span><span class="separator">:</span>
-        }
-        <span class = "unit">{{secondDisplay()}}</span>
-    </div>
+<div class="flex flex-column align-items-center gap-4 p-4">
+  <span class="text-6xl font-bold">{{ totalSeconds() | duration }}</span>
 
-    <div gap-2 class="chrono-action">
-        <button pButton (click)="start()" [disabled]="isRunning()">Start</button>
-        <button pButton (click)="stop()" [disabled]="!isRunning()">Stop</button>
-        <button pButton (click)="reset()">Reset</button>
-
-    </div>
+  <div class="flex gap-3">
+    <p-button label="Start" (click)="start()" [disabled]="isRunning()" />
+    <p-button label="Stop" severity="secondary" (click)="stop()" [disabled]="!isRunning()" />
+    <p-button label="Reset" severity="danger" (click)="reset()" />
+  </div>
 </div>
