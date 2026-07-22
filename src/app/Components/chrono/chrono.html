@@ -1,0 +1,18 @@
+<div class="chrono-container">
+    <div class="chrono-display">
+        @if (showHours()){
+            <span class ="unit">{{hours()}}</span><span class="separator">:</span>
+        }
+        @if(showMinutes()){
+            <span class ="unit">{{minutesDisplay()}}</span><span class="separator">:</span>
+        }
+        <span class = "unit">{{secondDisplay()}}</span>
+    </div>
+
+    <div gap-2 class="chrono-action">
+        <button pButton (click)="start()" [disabled]="isRunning()">Start</button>
+        <button pButton (click)="stop()" [disabled]="!isRunning()">Stop</button>
+        <button pButton (click)="reset()">Reset</button>
+
+    </div>
+</div>

@@ -1,0 +1,23 @@
+.chrono-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.chrono-display {
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+.chrono-actions {
+    display: flex;
+    
+}
+
+
+
+
+

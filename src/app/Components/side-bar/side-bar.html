@@ -1,0 +1,43 @@
+<div class="layout-wrapper flex">
+
+  <!-- Panneau latéral (Menu / Sidebar) -->
+  <p-drawer [(visible)]="sidebarVisible">
+    <!-- Header -->
+    <ng-template #header>
+      <span class="font-bold text-lg">Mon Application</span>
+    </ng-template>
+
+    <!-- Content -->
+    <div class="menu-content">
+      <p
+        routerLink="/chrono"
+        routerLinkActive="active"
+        (click)="closeSidebar()">
+        Chrono
+      </p>
+      <p
+        routerLink="/pipes"
+        routerLinkActive="active"
+        (click)="closeSidebar()">
+        Pipes
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <ng-template #footer>
+      <small>Pied de page</small>
+    </ng-template>
+  </p-drawer>
+
+  <!-- Contenu Principal -->
+  <main class="main-content flex-1 p-4">
+    <!-- Bouton pour ouvrir le menu -->
+    <p-button
+      icon="pi pi-bars"
+      (click)="sidebarVisible = true"
+      label="Menu">
+    </p-button>
+    <router-outlet></router-outlet>
+  </main>
+
+</div>
