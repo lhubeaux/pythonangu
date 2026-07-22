@@ -1,0 +1,10 @@
+<div class="item-form">
+  <input
+    type="text"
+    placeholder="Ajouter un article..."
+    [value]="newItem()"
+    (input)="newItem.set(($event.target).value)"
+    (keyup.enter)="add()"
+  />
+  <button (click)="add()">Ajouter</button>
+</div>

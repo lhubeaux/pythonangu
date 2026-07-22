@@ -1,0 +1,10 @@
+<ul class="item-list">
+  @for (item of items(); track item.id) {
+    <li>
+      <span>{{ item.name }}</span>
+      <button (click)="remove(item.id)"><i class="pi pi-trash"></i></button>
+    </li>
+  } @empty {
+    <li class="empty">Ta liste de courses est vide</li>
+  }
+</ul>
