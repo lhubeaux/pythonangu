@@ -1,5 +1,5 @@
 <div class="chrono">
-    <p>Time: {{formattedTime()}} </p>
+    <p>Time: {{time() | duree}} </p>
     <div>
         <button class="chrono_button" (click)="startChrono()">Démarer</button>
         <button class="chrono_button" (click)="resetChrono()">Reset</button>
