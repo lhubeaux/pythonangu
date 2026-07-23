@@ -1,0 +1,20 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="email"  placeholder="email">
+    @if (form.get('email')?.invalid && form.get('email')?.touched) {
+    <span class="error">Email invalide</span>
+}
+    <input type="password" formControlName="password"  placeholder="mot de passe">
+    <div formGroupName="address">
+        <input type="text" formControlName="street"  placeholder="adresse">
+        <input type="text" formControlName="number"  placeholder="numéro">
+        <input type="text" formControlName="postalCode"  placeholder="code postal">
+    </div>
+    <div formArrayName="languages">
+        @for (lang of languages.controls; track lang; let i = $index) {
+        <input [formControlName]="i" placeholder="Langue" />
+    <button type="button" (click)="removeLanguage(i)">✕</button>
+    }
+    <button type="button" (click)="addLanguage()">+</button>
+    </div>
+    <button type="submit">S'inscrire</button>
+</form>

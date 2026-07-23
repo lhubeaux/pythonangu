@@ -1,0 +1,8 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="email"  placeholder="email">
+    @if (form.get('email')?.invalid && form.get('email')?.touched) {
+    <span class="error">Email invalide</span>
+}
+    <input type="password" formControlName="password"  placeholder="password">
+    <button type="submit">Se connecter</button>
+</form>

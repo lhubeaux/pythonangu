@@ -1,0 +1,56 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%;
+  max-width: 320px;
+}
+
+input {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #343a4d;
+  border-radius: 8px;
+  background: #262a38;
+  color: #e6e8ef;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+input::placeholder {
+  color: #6b7288;
+}
+
+input:focus {
+  border-color: #6c8cff;
+}
+
+.error {
+  color: #ff6b6b;
+  font-size: 0.85rem;
+  margin-top: -0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+button {
+  margin-top: 0.4rem;
+  padding: 0.6rem 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background: #6c8cff;
+  color: #12141c;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+button:hover {
+  background: #5474e0;
+}
