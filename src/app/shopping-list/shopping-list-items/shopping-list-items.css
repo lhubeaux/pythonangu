@@ -19,8 +19,23 @@
   background: #2c3142;
 }
 
-.shopping-list-items .item span {
+.shopping-list-items .item-info {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.shopping-list-items .item-name {
   color: #e6e8ef;
+}
+
+.shopping-list-items .item-quantity {
+  background: #2a2f6c;
+  color: #a9b6ff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
 }
 
 .shopping-list-items .item button {

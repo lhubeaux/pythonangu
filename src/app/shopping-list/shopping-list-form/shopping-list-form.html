@@ -5,5 +5,12 @@
     (keyup.enter)="addItem()"
     placeholder="Ajouter un article..."
   />
+  <input
+    type="number"
+    class="quantity-input"
+    [(ngModel)]="newQuantity"
+    min="1"
+    (keyup.enter)="addItem()"
+  />
   <button (click)="addItem()">Ajouter</button>
 </div>

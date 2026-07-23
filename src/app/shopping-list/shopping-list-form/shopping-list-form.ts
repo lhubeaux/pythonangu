@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { SLServices } from '../sl-services';
 
 @Component({
   selector: 'app-shopping-list-form',
@@ -8,14 +9,16 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './shopping-list-form.css',
 })
 export class ShoppingListForm {
-  @Output() itemAdded = new EventEmitter<string>();
+  private sl = inject(SLServices);
 
   newItem = '';
+  newQuantity = 1;
 
   addItem(): void {
     const trimmed = this.newItem.trim();
     if (!trimmed) return;
-    this.itemAdded.emit(trimmed);
+    this.sl.addItem(trimmed, this.newQuantity);
     this.newItem = '';
+    this.newQuantity = 1;
   }
 }

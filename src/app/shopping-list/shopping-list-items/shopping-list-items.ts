@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { SLServices } from '../sl-services';
 
 @Component({
   selector: 'app-shopping-list-items',
@@ -7,10 +8,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './shopping-list-items.css',
 })
 export class ShoppingListItems {
-  @Input() items: string[] = [];
-  @Output() itemRemoved = new EventEmitter<number>();
+  private sl = inject(SLServices);
+  items = this.sl.items;
 
   remove(index: number): void {
-    this.itemRemoved.emit(index);
+    this.sl.removeItem(index);
   }
 }

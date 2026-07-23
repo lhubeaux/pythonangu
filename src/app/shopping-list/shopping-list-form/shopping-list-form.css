@@ -23,6 +23,12 @@
   border-color: #6c8cff;
 }
 
+.shopping-list-form input.quantity-input {
+  flex: 0 0 70px;
+  min-width: 0;
+  text-align: center;
+}
+
 .shopping-list-form button {
   padding: 0.6rem 1.1rem;
   border: none;
