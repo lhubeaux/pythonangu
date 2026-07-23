@@ -1,3 +1,80 @@
+/* Bouton d'ouverture du menu */
+:host ::ng-deep .main-content > .p-button {
+  background: #2a2f6c;
+  border-color: #2a2f6c;
+  color: #a9b6ff;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+:host ::ng-deep .main-content > .p-button:hover {
+  background: #363c8a;
+  border-color: #363c8a;
+  color: #d6dcff;
+}
+
+:host ::ng-deep .main-content > .p-button .p-button-icon {
+  color: inherit;
+}
+
+/* Panneau de la sidebar */
+:host ::ng-deep .p-drawer {
+  background: #1b1e27;
+  color: #e6e8ef;
+  border-right: 1px solid #2f3342;
+}
+
+:host ::ng-deep .p-drawer-header {
+  border-bottom: 1px solid #2f3342;
+  padding: 1rem 1.25rem;
+}
+
+:host ::ng-deep .p-drawer-header .font-bold {
+  color: #a9b6ff;
+}
+
+:host ::ng-deep .p-drawer-close-button {
+  color: #6b7288;
+}
+
+:host ::ng-deep .p-drawer-close-button:hover {
+  background: #2c3142;
+  color: #e6e8ef;
+}
+
+:host ::ng-deep .p-drawer-content {
+  padding: 0.75rem;
+}
+
+:host ::ng-deep .p-drawer-footer {
+  border-top: 1px solid #2f3342;
+  padding: 0.75rem 1.25rem;
+  color: #6b7288;
+}
+
+/* Liens du menu */
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
 .menu-content p {
+  margin: 0;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  color: #e6e8ef;
   cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.menu-content p:hover {
+  background: #2c3142;
+}
+
+.menu-content p.active {
+  background: #2a2f6c;
+  color: #a9b6ff;
+  font-weight: 600;
 }

@@ -7,10 +7,14 @@ export interface ShoppingItem {
 
 @Service({})
 export class SLServices {
-  _items = signal<ShoppingItem[]>([]);
+  private _items = signal<ShoppingItem[]>([]);
   items = this._items.asReadonly();
 
   addItem(name: string, quantity: number): void {
+    if (quantity <= 0) {
+      return;
+    }
+
     const normalized = name.trim().toLowerCase();
 
     this._items.update((list) => {
