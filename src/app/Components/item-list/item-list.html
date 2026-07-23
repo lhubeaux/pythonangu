@@ -1,0 +1,15 @@
+<ul class="list-none p-0 m-0">
+  @for (item of items(); track item.id) {
+    <li class="flex justify-content-between align-items-center p-2 border-bottom-1 surface-border">
+      <span class="flex-1">{{ item.name }}</span>
+      <div class="flex align-items-center gap-2 mr-3">
+        <p-button icon="pi pi-minus" [rounded]="true" [text]="true" size="small" (onClick)="decrease(item.id)" />
+        <span class="font-semibold w-2rem text-center">{{ item.quantity }}</span>
+        <p-button icon="pi pi-plus" [rounded]="true" [text]="true" size="small" (onClick)="increase(item.id)" />
+      </div>
+      <p-button icon="pi pi-trash" severity="danger" [text]="true" (onClick)="remove(item.id)" />
+    </li>
+  } @empty {
+    <li class="flex justify-content-center p-2 text-color-secondary font-italic">Ta liste de courses est vide</li>
+  }
+</ul>

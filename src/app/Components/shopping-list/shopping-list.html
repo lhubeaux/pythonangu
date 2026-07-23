@@ -1,5 +1,9 @@
-<div class="shopping-list-page">
-  <h2>Ma liste de courses</h2>
+<p-card header="Ma liste de courses" class="mx-auto">
   <app-item-form (itemAdded)="addItem($event)" />
-  <app-item-list [items]="items()" (itemRemoved)="removeItem($event)" />
-</div>
+  <app-item-list
+    [items]="items()"
+    (itemRemoved)="removeItem($event)"
+    (quantityIncreased)="increaseQuantity($event)"
+    (quantityDecreased)="decreaseQuantity($event)"
+  />
+</p-card>

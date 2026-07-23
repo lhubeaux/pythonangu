@@ -1,22 +1,33 @@
-import { Component, signal } from '@angular/core';
-import { ItemForm } from '../../item-form/item-form';
-import { ItemList } from '../../item-list/item-list';
-
+import { Component, inject } from '@angular/core';
+import { ItemForm } from '../item-form/item-form';
+import { ItemList } from '../item-list/item-list';
+import { ShoppingListService } from '../../Services/shopping-list';
+import { CardModule } from 'primeng/card';
 
 @Component({
   selector: 'app-shopping-list',
-  imports: [ItemForm, ItemList],
+  imports: [ItemForm, ItemList, CardModule],
   templateUrl: './shopping-list.html',
   styleUrl: './shopping-list.css',
 })
 export class ShoppingList {
-  items = signal<{ id: number; name: string }[]>([]);
+  private readonly _shoppingListService = inject(ShoppingListService);
 
-  addItem(name: string): void {
-    this.items.update((list) => [...list, { id: Date.now(), name }]);
+  items = this._shoppingListService.items;
+
+  addItem(event: { name: string; quantity: number }): void {
+    this._shoppingListService.addItem(event.name, event.quantity);
   }
 
   removeItem(id: number): void {
-    this.items.update((list) => list.filter((item) => item.id !== id));
+    this._shoppingListService.removeItem(id);
+  }
+
+  increaseQuantity(id: number): void {
+    this._shoppingListService.incrementQuantity(id);
+  }
+
+  decreaseQuantity(id: number): void {
+    this._shoppingListService.decrementQuantity(id);
   }
 }

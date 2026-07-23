@@ -1,6 +1,6 @@
 import { Component, signal, OnDestroy } from '@angular/core';
 import { Button } from 'primeng/button';
-import { DurationPipe } from "../pipes/duration-pipe";
+import { DurationPipe } from "../../pipes/duration-pipe";
 
 @Component({
   selector: 'app-chrono',

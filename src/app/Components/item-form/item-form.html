@@ -1,0 +1,22 @@
+<div class="flex gap-2 mb-4">
+  <input
+    pInputText
+    type="text"
+    class="flex-1"
+    placeholder="Ajouter un article..."
+    [value]="newItem()"
+    (input)="newItem.set(($event.target).value)"
+    (keyup.enter)="add()"
+  />
+  <input
+    pInputText
+    type="number"
+    min="1"
+    class="w-4rem text-center"
+    aria-label="Quantité"
+    [value]="quantity()"
+    (input)="updateQuantity(($event.target).value)"
+    (keyup.enter)="add()"
+  />
+  <p-button label="Ajouter" (onClick)="add()" />
+</div>
